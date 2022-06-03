@@ -10,6 +10,7 @@ using DevIO.App.ViewModels;
 using AutoMapper;
 using DevIO.Business.Interfaces;
 using DevIO.Business.Models;
+using DevIO.Business.Intefaces;
 
 namespace DevIO.App.Controllers
 {
@@ -17,31 +18,31 @@ namespace DevIO.App.Controllers
     {
         private readonly IProdutoRepository _produtoRepository;
         private readonly IFornecedorRepository _fornecedorRepository;
-        //private readonly IProdutoService _produtoService;
+        private readonly IProdutoService _produtoService;
         private readonly IMapper _mapper;
 
         public ProdutosController(IProdutoRepository produtoRepository,
                                   IFornecedorRepository fornecedorRepository,
-                                  IMapper mapper
-                                  //IProdutoService produtoService,
-                                  //INotificador notificador
-            ) //: base(notificador)
+                                  IMapper mapper,
+                                  IProdutoService produtoService,
+                                  INotificador notificador
+            ) : base(notificador)
         {
             _produtoRepository = produtoRepository;
             _fornecedorRepository = fornecedorRepository;
             _mapper = mapper;
-            //_produtoService = produtoService;
+            _produtoService = produtoService;
         }
 
         //[AllowAnonymous]
-        //[Route("lista-de-produtos")]
+        [Route("lista-de-produtos")]
         public async Task<IActionResult> Index()
         {
             return View(_mapper.Map<IEnumerable<ProdutoViewModel>>(await _produtoRepository.ObterProdutosFornecedores()));
         }
 
         //[AllowAnonymous]
-        //[Route("dados-do-produto/{id:guid}")]
+        [Route("dados-do-produto/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -55,7 +56,7 @@ namespace DevIO.App.Controllers
         }
 
         //[ClaimsAuthorize("Produto", "Adicionar")]
-        //[Route("novo-produto")]
+        [Route("novo-produto")]
         public async Task<IActionResult> Create()
         {
             var produtoViewModel = await PopularFornecedores(new ProdutoViewModel());
@@ -64,7 +65,7 @@ namespace DevIO.App.Controllers
         }
 
         //[ClaimsAuthorize("Produto", "Adicionar")]
-        //[Route("novo-produto")]
+        [Route("novo-produto")]
         [HttpPost]
         public async Task<IActionResult> Create(ProdutoViewModel produtoViewModel)
         {
@@ -72,21 +73,20 @@ namespace DevIO.App.Controllers
             if (!ModelState.IsValid) return View(produtoViewModel);
 
             var imgPrefixo = Guid.NewGuid() + "_";
-            //if (!await UploadArquivo(produtoViewModel.ImagemUpload, imgPrefixo))
-            //{
-            //    return View(produtoViewModel);
-            //}
+            if (!await UploadArquivo(produtoViewModel.ImagemUpload, imgPrefixo))
+            {
+                return View(produtoViewModel);
+            }
 
-            //produtoViewModel.Imagem = imgPrefixo + produtoViewModel.ImagemUpload.FileName;
-            await _produtoRepository.Adicionar(_mapper.Map<Produto>(produtoViewModel));
+            produtoViewModel.Imagem = imgPrefixo + produtoViewModel.ImagemUpload.FileName;
+            await _produtoService.Adicionar(_mapper.Map<Produto>(produtoViewModel));
 
-            //if (!OperacaoValida()) return View(produtoViewModel);
-            return View(produtoViewModel);
-            //return RedirectToAction("Index");
+            if (!OperacaoValida()) return View(produtoViewModel);
+            return RedirectToAction("Index");
         }
 
         //[ClaimsAuthorize("Produto", "Editar")]
-        //[Route("editar-produto/{id:guid}")]
+        [Route("editar-produto/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
@@ -100,8 +100,8 @@ namespace DevIO.App.Controllers
         }
 
         //[ClaimsAuthorize("Produto", "Editar")]
-        //[Route("editar-produto/{id:guid}")]
-        //[HttpPost]
+        [Route("editar-produto/{id:guid}")]
+        [HttpPost]
         public async Task<IActionResult> Edit(Guid id, ProdutoViewModel produtoViewModel)
         {
             if (id != produtoViewModel.Id) return NotFound();
@@ -127,15 +127,15 @@ namespace DevIO.App.Controllers
             produtoAtualizacao.Valor = produtoViewModel.Valor;
             produtoAtualizacao.Ativo = produtoViewModel.Ativo;
 
-            await _produtoRepository.Atualizar(_mapper.Map<Produto>(produtoAtualizacao));
+            await _produtoService.Atualizar(_mapper.Map<Produto>(produtoAtualizacao));
 
-            //if (!OperacaoValida()) return View(produtoViewModel);
+            if (!OperacaoValida()) return View(produtoViewModel);
 
             return RedirectToAction("Index");
         }
 
         //[ClaimsAuthorize("Produto", "Excluir")]
-        //[Route("excluir-produto/{id:guid}")]
+        [Route("excluir-produto/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var produto = await ObterProduto(id);
@@ -149,8 +149,8 @@ namespace DevIO.App.Controllers
         }
 
         //[ClaimsAuthorize("Produto", "Excluir")]
-        //[Route("excluir-produto/{id:guid}")]
-        //[HttpPost, ActionName("Delete")]
+        [Route("excluir-produto/{id:guid}")]
+        [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(Guid id)
         {
             var produto = await ObterProduto(id);
@@ -160,9 +160,9 @@ namespace DevIO.App.Controllers
                 return NotFound();
             }
 
-            await _produtoRepository.Remover(id);
+            await _produtoService.Remover(id);
 
-            //if (!OperacaoValida()) return View(produto);
+            if (!OperacaoValida()) return View(produto);
 
             TempData["Sucesso"] = "Produto excluido com sucesso!";
 

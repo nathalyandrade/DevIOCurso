@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "N/lSeoy8TAsZ28Tt0TfUQw0xMmdjqsp1RkR3uNptcixNpfUrmYzYb7bDpjJMq3NwpDVIHHkljCM6f0O4GA0X4Q==",
+  "dgSpecHash": "vTQFgyzN1ugs7O3YZodNV17ccbdqgNVinxBAimTXxbmTLXE/6SLyqhbF3WNOP1XVsgPyBB0qiQVbV4edw9lGPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\nathaly.cardoso\\Documents\\Curso\\MinhaAppMvcCompleta\\DevIO.App\\DevIO.App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\fluentvalidation\\11.0.2\\fluentvalidation.11.0.2.nupkg.sha512",
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

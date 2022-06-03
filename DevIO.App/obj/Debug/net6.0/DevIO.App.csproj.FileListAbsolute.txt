@@ -281,3 +281,4 @@ C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\DevIO.App\obj\Debug
 C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\DevIO.App\obj\Debug\net6.0\ref\DevIO.App.dll
 C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\DevIO.App\obj\Debug\net6.0\DevIO.App.pdb
 C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\DevIO.App\obj\Debug\net6.0\DevIO.App.genruntimeconfig.cache
+C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\DevIO.App\bin\Debug\net6.0\FluentValidation.dll

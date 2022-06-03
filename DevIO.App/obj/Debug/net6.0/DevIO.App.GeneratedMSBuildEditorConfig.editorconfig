@@ -39,6 +39,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nathaly.cardoso/Documents/Curso/MinhaAppMvcCompleta/DevIO.App/Views/Fornecedores/_AtualizarEndereco.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXF9BdHVhbGl6YXJFbmRlcmVjby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nathaly.cardoso/Documents/Curso/MinhaAppMvcCompleta/DevIO.App/Views/Fornecedores/_DetalhesEndereco.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXF9EZXRhbGhlc0VuZGVyZWNvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nathaly.cardoso/Documents/Curso/MinhaAppMvcCompleta/DevIO.App/Views/Fornecedores/_Endereco.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybmVjZWRvcmVzXF9FbmRlcmVjby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -69,6 +77,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nathaly.cardoso/Documents/Curso/MinhaAppMvcCompleta/DevIO.App/Views/Produtos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nathaly.cardoso/Documents/Curso/MinhaAppMvcCompleta/DevIO.App/Views/Produtos/_ListaProdutos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcX0xpc3RhUHJvZHV0b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nathaly.cardoso/Documents/Curso/MinhaAppMvcCompleta/DevIO.App/Views/Shared/Components/Summary/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3VtbWFyeVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nathaly.cardoso/Documents/Curso/MinhaAppMvcCompleta/DevIO.App/Views/Shared/Error.cshtml]

@@ -1,11 +1,23 @@
+using DevIO.App.Configurations;
 using DevIO.App.Data;
 using DevIO.Business.Interfaces;
 using DevIO.Data.Context;
 using DevIO.Data.Repository;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using static DevIO.App.Extensions.MoedaAttribute;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", true, true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", true, true)
+    .AddEnvironmentVariables();
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -15,15 +27,19 @@ builder.Services.AddDbContext<MeuDbContext>(options =>
 //builder.Services.AddDbContext<MeuContext>(options =>
 //    options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<MeuDbContext>();
+builder.Services.AddIdentityConfiguration(builder.Configuration);
+
 //builder.Services.AddControllersWithViews();
 
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddScoped<MeuDbContext>();
-builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
-builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
-builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+
+builder.Services.ResolveDependencies();
+
+
+
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddMvcConfiguration();
 
 var app = builder.Build();
 
@@ -42,10 +58,13 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
 app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseGlobalizationConfig();
 
 app.MapControllerRoute(
     name: "default",

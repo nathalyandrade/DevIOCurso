@@ -9,3 +9,4 @@ C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\src\DevIO.Business\
 C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.dll
 C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\src\DevIO.Business\obj\Debug\net6.0\ref\DevIO.Business.dll
 C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.pdb
+C:\Users\nathaly.cardoso\Documents\Curso\MinhaAppMvcCompleta\src\DevIO.Business\obj\Debug\net6.0\DevIO.Business.csproj.AssemblyReference.cache

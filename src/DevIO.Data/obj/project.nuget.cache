@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/zYGS3TGqO5uF16qR/GNT6RTQho/78ooH01cItyDekVUUZxcAMxHN+CLQ8hL3sy4mmZ61QoT2Bq1l8UWDPeBKw==",
+  "dgSpecHash": "oSBoDlIuLA25pJw3Jevrdb2JiznQbIKs7+XGPIQNEg4j3iXsHVxTtYQElTOUgWLT1FtSlqLVF91fb5bAJkqH4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\nathaly.cardoso\\Documents\\Curso\\MinhaAppMvcCompleta\\src\\DevIO.Data\\DevIO.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\fluentvalidation\\11.0.2\\fluentvalidation.11.0.2.nupkg.sha512",
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\nathaly.cardoso\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
